@@ -4,6 +4,7 @@
 \include "piano_right.ly"
 \include "cello.ly"
 \include "clar.ly"
+\include "horn.ly"
 \include "chords.ly"
 
 \header
@@ -29,6 +30,25 @@ clarStaffSmall =
   {
     \set Staff.midiInstrument = #"clarinet"
     \Clar
+  }
+}
+
+hornStaff =
+{
+  \new Staff
+  {
+    \Horn
+  }
+}
+
+hornStaffSmall =
+{
+  \new Staff \with {
+    \magnifyStaff #5/7
+  }
+  {
+    \set Staff.midiInstrument = #"french horn"
+    \Horn
   }
 }
 
@@ -69,7 +89,9 @@ pianoStaff =
 fullScore =
 {
 <<
-  \clarStaffSmall
+  % Choose clarinet or horn.
+  %\clarStaffSmall
+  \hornStaffSmall
   \celloStaffSmall
   \chords { \ackord }
   \pianoStaff
@@ -88,13 +110,29 @@ fullScore =
 }
 }
 
-% Clarinet only (transposed).
+% Choose clarinet or horn.
+
+%% Clarinet only (transposed).
+%\bookpart {
+%\score {
+%  <<
+%    \compressFullBarRests
+%    \transpose bes c'
+%    \clarStaff
+%  >>
+%  \layout {}
+%}
+%}
+
+% Horn only (transposed).
 \bookpart {
 \score {
   <<
     \compressFullBarRests
-    \transpose bes c'
-    \clarStaff
+    % The voice became very low for the horn with the usual f --> c transposition.
+    % Trey one octava higher.
+    \transpose f c'
+    \hornStaff
   >>
   \layout {}
 }
