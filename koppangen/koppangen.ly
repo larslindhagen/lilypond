@@ -6,23 +6,13 @@
 \header
 {
   title = \markup{ " " \concat{Kopp \char ##x00e5 ngen} }
-  arranger = "Arr: Sigurd Löf (17/12 2020)"
+  arranger = "Arr: Sigurd Löf (v. 3/1 2021)"
   composer = "Per-Erik Moraeus"
 }
 
 hornStaff =
 {
   \new Staff
-  {
-    \Horn
-  }
-}
-
-hornStaffSmall =
-{
-  \new Staff \with {
-    \magnifyStaff #3/5 %#5/7
-  }
   {
     \set Staff.midiInstrument = #"french horn"
     \Horn
@@ -32,16 +22,6 @@ hornStaffSmall =
 celloStaff =
 {
   \new Staff
-  {
-    \Cello
-  }
-}
-
-celloStaffSmall =
-{
-  \new Staff \with {
-    \magnifyStaff #3/5 %#5/7
-  }
   {
     \set Staff.midiInstrument = #"cello"
     \Cello
@@ -53,8 +33,8 @@ celloStaffSmall =
 fullScore =
 {
 <<
-  \hornStaffSmall
-  \celloStaffSmall
+  \hornStaff
+  \celloStaff
 >>
 }
 
