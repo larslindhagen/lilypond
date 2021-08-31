@@ -2,7 +2,6 @@
 
 \version "2.18.0"
 
-
 Cello =
 {
   \set Staff.instrumentName = #"Cello"
