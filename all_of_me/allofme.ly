@@ -1,6 +1,5 @@
 \version "2.19.15"
 
-
 \header
 {
   title = "All of me"
